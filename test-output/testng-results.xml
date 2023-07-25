@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-25T18:07:04 IST" name="Default suite" finished-at="2023-07-25T18:07:17 IST" duration-ms="13766">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.capgemini.runner.RunnersTests@449a4f23]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-07-25T18:07:04 IST" name="Default test" finished-at="2023-07-25T18:07:17 IST" duration-ms="13766">
+      <class name="com.capgemini.runner.RunnersTests">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.capgemini.runner.RunnersTests@449a4f23]" started-at="2023-07-25T18:07:04 IST" name="setUpClass" finished-at="2023-07-25T18:07:04 IST" duration-ms="606" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@60a19573]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.capgemini.runner.RunnersTests@449a4f23]" started-at="2023-07-25T18:07:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-07-25T18:07:17 IST" duration-ms="13074" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["My learning platform mandatory courses validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["My learning platform"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.capgemini.runner.RunnersTests@449a4f23]" started-at="2023-07-25T18:07:17 IST" name="tearDownClass" finished-at="2023-07-25T18:07:17 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.capgemini.runner.RunnersTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
