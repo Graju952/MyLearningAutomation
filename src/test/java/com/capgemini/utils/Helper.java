@@ -8,17 +8,24 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
-
+import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Helper {
 	
 	ReadConfig rc = new ReadConfig();
-	static WebDriver driver;
-	@SuppressWarnings("deprecation")
-	public static WebDriver startBrowser(String browserName)
+	public static WebDriver driver;
+	
+	@Before
+	public  void startBrowser()
 	{
-		
+		try {
+			ReadConfig.initializePropertyFile();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String browserName = ReadConfig.prop.getProperty("browserName");
 		
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
@@ -29,7 +36,7 @@ public class Helper {
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			
 		}
 		else if(browserName.equalsIgnoreCase("edge"))
@@ -43,8 +50,15 @@ public class Helper {
 		    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		}
-		return driver;
 	}
+	
+	public static void openPage(String url) {
+		driver.get(url);
+	}
+
+//	public static WebDriver getDriver() {
+//		return driver;
+//	}
 }
 
 
