@@ -16,17 +16,9 @@ public class Helper {
 	ReadConfig rc = new ReadConfig();
 	public static WebDriver driver;
 	
-	@Before
-	public  void startBrowser()
+	
+	public  WebDriver startBrowser(String browserName)
 	{
-		try {
-			ReadConfig.initializePropertyFile();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String browserName = ReadConfig.prop.getProperty("browserName");
-		
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
@@ -36,7 +28,7 @@ public class Helper {
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			
 		}
 		else if(browserName.equalsIgnoreCase("edge"))
@@ -50,6 +42,7 @@ public class Helper {
 		    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		}
+		return driver;
 	}
 	
 	public static void openPage(String url) {

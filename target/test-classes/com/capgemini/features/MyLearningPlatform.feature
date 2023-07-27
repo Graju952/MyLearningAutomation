@@ -4,5 +4,5 @@ Feature: My learning platform
   Scenario: My learning platform mandatory courses validation
     Given user lands on MyLearning page "https://mylearning.capgemini.com/"
     When user clicks on view all icon
-    And click on Due Date column
+    And select Recommended from filter
     Then store Course details in excel sheet

@@ -17,6 +17,10 @@ public class MyLearningPage {
 
     @FindBy(xpath = "//*[@class='deepLinkIcon']")
     public List<WebElement> viewAll;
+    
+    @FindBy(partialLinkText="Due Date")
+    public WebElement dueDate;
+    
     WebDriver driver;
 
     public MyLearningPage(WebDriver driver){
@@ -25,15 +29,23 @@ public class MyLearningPage {
     }
 
     public void myLearningPageCourseDetails(){
+    	driver.switchTo().frame("CoreIFrame"); 
         String text = mandatoryCourseTitle.getText();
         System.out.println("title is::"+text);
     }
 
     public void clickOnViewAllIcon(){
-    	WebDriverWait wait = new WebDriverWait(driver,30);
-    	wait.until(ExpectedConditions.visibilityOf((WebElement) viewAll));
+//    	driver.switchTo().frame("CoreIFrame");
+//    	WebDriverWait wait = new WebDriverWait(driver,30);
+//    	wait.until(ExpectedConditions.visibilityOf((WebElement) viewAll));
         viewAll.get(0).click();
     }
 
+    public void clickOnDueDateColumn(){
+//    	driver.switchTo().frame("CoreIFrame");
+    	dueDate.click();
+        System.out.println("clicked on due date");
+//        columnHeaders.get(4).click();
+    }
 
 }
